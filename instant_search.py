@@ -22,6 +22,7 @@ class Application(tk.Frame):
         super().__init__(master)
         self.master = master
         self.master.title("Instant Search Demo")
+        self.master.option_add('*Font', 'Arial 19')
         self.pack()
         self.create_widgets()
         self.indexed_words = IndexedSequenceSet(words)
