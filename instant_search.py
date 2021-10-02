@@ -1,7 +1,11 @@
 import tkinter as tk
 from indexed_sequence_set import IndexedSequenceSet
 from itertools import islice
+import os
 
+
+def relative_path(path):
+    return os.path.join(os.path.dirname(__file__), path)
 
 def ingest_words(words_file):
     with open(words_file, "r") as f:
@@ -47,5 +51,5 @@ class Application(tk.Frame):
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = Application(ingest_words("words_alpha.txt"), master=root)
+    app = Application(ingest_words(relative_path("words_alpha.txt")), master=root)
     app.mainloop()
